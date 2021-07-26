@@ -1,8 +1,5 @@
 # RunFromZombiesGame
 
 
-this is my first ever java game.
-
-this is still in development
-
-thanks.
+This game is stil in development.
+Version 1.0
