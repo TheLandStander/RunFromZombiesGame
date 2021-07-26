@@ -1,5 +1,4 @@
 package game;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -15,7 +14,6 @@ import game.RoundTimer;
 public class Creature extends Entity{
 
 	Graphics g;
-	
      
 	
 	
@@ -142,24 +140,6 @@ public class Creature extends Entity{
 			
 	    if(CheckEntityCollisions(0f, yMove) )
 			Thread.currentThread().stop();
-		
-		
-	}
-
-
-
-
-
-	
-	public void tick() {
-	
-		
-	}
-
-
-	
-	public void render(Graphics g) {
-		
 		
 		
 	}

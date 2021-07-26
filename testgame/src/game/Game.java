@@ -146,6 +146,9 @@ private void tick() {
 
 private BufferStrategy bs;
 private Graphics g;
+private Entity entity;
+
+
 
 
 private void render(){
@@ -161,6 +164,13 @@ if(bs == null) {
 	if(State.getstate() != null)
 	State.getstate().render(g);
 	
+	
+	if(entity.CheckEntityCollisions(xMove, 0f) )
+		RoundTimer.drawString(g, "YOU SURVIVED  " + time/500 + "  ROUNDS",670, 300, true, Color.red,new Font("Arial",Font.BOLD,90));
+		
+		
+    if(entity.CheckEntityCollisions(0f, yMove) )
+    	RoundTimer.drawString(g, "YOU SURVIVED  " + time/500 + "  ROUNDS",670, 300, true, Color.red,new Font("Arial",Font.BOLD,90));
 	
 	RoundTimer.drawString(g, "Round: " + (time/500), 80, 10, true, Color.black,new Font("Arial",Font.BOLD,30));
 	
