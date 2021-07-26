@@ -146,8 +146,28 @@ private void tick() {
 
 private BufferStrategy bs;
 private Graphics g;
-private Entity entity;
+private Entity e;
 
+
+
+public Rectangle getCollisionBounds(float xOffset, float yOffset) {
+	return new Rectangle( (int)   (e.x + e.bounds.x + xOffset), (int) (e.y + e.bounds.y + yOffset), e.bounds.width, e.bounds.height);
+	
+}
+
+
+public boolean CheckEntityCollisions(float xOffset, float yOffset) {
+	for(Entity e: handler.getWorlds().getEntityManager().getEntities()) {
+		
+		if(e.equals(this))
+			continue;
+		
+		if(e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
+			return true;
+		
+	}
+	return false;
+}
 
 
 
@@ -163,14 +183,17 @@ if(bs == null) {
  
 	if(State.getstate() != null)
 	State.getstate().render(g);
+
 	
 	
-	if(entity.CheckEntityCollisions(xMove, 0f) )
+	if(e.CheckEntityCollisions(xMove, 0f) )
 		RoundTimer.drawString(g, "YOU SURVIVED  " + time/500 + "  ROUNDS",670, 300, true, Color.red,new Font("Arial",Font.BOLD,90));
 		
 		
-    if(entity.CheckEntityCollisions(0f, yMove) )
+    if(e.CheckEntityCollisions(0f, yMove) )
     	RoundTimer.drawString(g, "YOU SURVIVED  " + time/500 + "  ROUNDS",670, 300, true, Color.red,new Font("Arial",Font.BOLD,90));
+	
+	
 	
 	RoundTimer.drawString(g, "Round: " + (time/500), 80, 10, true, Color.black,new Font("Arial",Font.BOLD,30));
 	
