@@ -1,6 +1,8 @@
 package game;
 
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,7 +14,9 @@ public class Zombie extends MovingEntity{
 
 	Random rand = new Random();
     private float time = 0;
+    GameOver go = new GameOver();
 	
+    
 	
 	public Zombie(Handler handler, float x, float y) {
 		super(handler, x, y, 120 ,100);
@@ -59,14 +63,17 @@ public class Zombie extends MovingEntity{
 			    x += 100;
 			 }
 	 }
+		 
+		 
+		
 	 
 	 }
 	
 	
-	 
 
 
 public void render(Graphics g) {
+	
 g.drawImage(Assets.Zombie,(int) (x - handler.getCamera().getxOffset()), (int) (y - handler.getCamera().getyOffset()), height, width, null);
 
 	}

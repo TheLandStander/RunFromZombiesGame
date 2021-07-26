@@ -7,7 +7,6 @@ import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Paint;
-import java.awt.Rectangle;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
@@ -29,8 +28,6 @@ private Handler handler;
 private State gameState;
 private KeyManager keymanager;
 private int time = 0;
-private int xMove = 0;
-private int yMove = 0;
 
 public boolean isRunning() {
 	return running;
@@ -140,34 +137,11 @@ private void tick() {
 	if(State.getstate() != null)
 	State.getstate().tick();
 	time++;
-	
 }
 
 
 private BufferStrategy bs;
 private Graphics g;
-private Entity e;
-
-
-
-public Rectangle getCollisionBounds(float xOffset, float yOffset) {
-	return new Rectangle( (int)   (e.x + e.bounds.x + xOffset), (int) (e.y + e.bounds.y + yOffset), e.bounds.width, e.bounds.height);
-	
-}
-
-
-public boolean CheckEntityCollisions(float xOffset, float yOffset) {
-	for(Entity e: handler.getWorlds().getEntityManager().getEntities()) {
-		
-		if(e.equals(this))
-			continue;
-		
-		if(e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
-			return true;
-		
-	}
-	return false;
-}
 
 
 
@@ -182,24 +156,18 @@ if(bs == null) {
 	g = bs.getDrawGraphics();
  
 	if(State.getstate() != null)
-	State.getstate().render(g);
-
-	
-	
-	if(e.CheckEntityCollisions(xMove, 0f) )
-		RoundTimer.drawString(g, "YOU SURVIVED  " + time/500 + "  ROUNDS",670, 300, true, Color.red,new Font("Arial",Font.BOLD,90));
-		
-		
-    if(e.CheckEntityCollisions(0f, yMove) )
-    	RoundTimer.drawString(g, "YOU SURVIVED  " + time/500 + "  ROUNDS",670, 300, true, Color.red,new Font("Arial",Font.BOLD,90));
+		State.getstate().render(g);
 	
 	
 	
 	RoundTimer.drawString(g, "Round: " + (time/500), 80, 10, true, Color.black,new Font("Arial",Font.BOLD,30));
 	
-
+	
 	bs.show();
 	g.dispose();
+	
+	
+	
 
 }
 
@@ -228,6 +196,7 @@ private void init() {
 	keymanager  = new KeyManager();
 	
 	Window.getFrame().addKeyListener(keymanager);
+	
 	
 	
 	

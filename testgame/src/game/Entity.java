@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 
 import launcher.Handler;
 
-public class Entity {
+public abstract class Entity {
 
 protected Handler handler;
 protected float x,y;
@@ -71,17 +71,9 @@ public void setWidth(int width) {
 	this.width = width;
 }
 
-public void tick() {
-	// TODO Auto-generated method stub
+public abstract void tick();
+public abstract void render (Graphics g);
 	
-}
-
-public void render(Graphics g) {
-	// TODO Auto-generated method stub
-	
-}
-
-
 	
 
 }

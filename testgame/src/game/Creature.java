@@ -1,20 +1,14 @@
 package game;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.PrintGraphics;
 
-import launcher.Assets;
+import java.awt.Graphics;
+
 import launcher.Handler;
-import launcher.Launcher;
-import launcher.State;
 import launcher.Tiles;
-import game.RoundTimer;
-public class Creature extends Entity{
+
+public abstract class Creature extends Entity{
+	GameOver go = new GameOver();
 
 	Graphics g;
-     
 	
 	
 	public float getSpeed() {
@@ -64,7 +58,6 @@ public class Creature extends Entity{
 	public static final int DEFAULT_SPEED = 3;
     public static final int DEFAULT_CREATURE_WIDTH = 64;
 	public static final int DEFAULT_CREATURE_HEIGHT = 64;
-	private int time = 0;
 	
 	public Creature(Handler handler,float x, float y,int width,int height) {
 		super(handler,x, y,width,height);
@@ -125,7 +118,7 @@ public class Creature extends Entity{
 		
 	}
 	
-	public void move() {
+public void move() {
 		
 		if(!CheckEntityCollisions(xMove, 0f) )
 		xMove();
@@ -135,14 +128,17 @@ public class Creature extends Entity{
 		yMove();
 		
 		if(CheckEntityCollisions(xMove, 0f) )
+			go.gameEnded(g);
 			Thread.currentThread().stop();
 			
 			
 	    if(CheckEntityCollisions(0f, yMove) )
-			Thread.currentThread().stop();
+	    	go.gameEnded(g);
+	    	Thread.currentThread().stop();
 		
 		
 	}
+	
 	
 	
 }

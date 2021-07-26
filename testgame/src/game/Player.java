@@ -6,10 +6,9 @@ import java.awt.Graphics;
 import launcher.Assets;
 import launcher.Handler;
 
+
 public class Player extends Creature{
-private int time = 0;
-	
-	
+
 	public Player(Handler handler, float x, float y) {
 		super(handler,x, y, Creature.DEFAULT_CREATURE_WIDTH,Creature.DEFAULT_CREATURE_HEIGHT);
 		speed = 6.0f;
@@ -25,6 +24,7 @@ private int time = 0;
 	getInput();
 	move();
 	handler.getCamera().centerOnEntity(this);	
+	
 	}
 	
 	private void getInput() {
@@ -49,9 +49,11 @@ private int time = 0;
 
 	
 	public void render(Graphics g) {
-	
+		
+		
 		g.drawImage(Assets.Player,(int) (x - handler.getCamera().getxOffset()), (int) (y - handler.getCamera().getyOffset()), height, width, null);
 
+		
 	}
 
 	
