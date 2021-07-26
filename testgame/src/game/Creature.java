@@ -7,8 +7,8 @@ import launcher.Tiles;
 
 public abstract class Creature extends Entity{
 	GameOver go = new GameOver();
-
-	Graphics g;
+   Graphics g;
+	
 	
 	
 	public float getSpeed() {
@@ -120,21 +120,21 @@ public abstract class Creature extends Entity{
 	
 public void move() {
 		
-		if(!CheckEntityCollisions(xMove, 0f) )
-		xMove();
+		if(!CheckEntityCollisions(xMove, 0f) ) {
+		xMove();}
 		
 		
-		if(!CheckEntityCollisions(0f, yMove) )
-		yMove();
+		if(!CheckEntityCollisions(0f, yMove) ) {
+		yMove();}
 		
-		if(CheckEntityCollisions(xMove, 0f) )
-			go.gameEnded(g);
-			Thread.currentThread().stop();
+		if(CheckEntityCollisions(xMove, 0f) ) {
+			go.render(g);
+			Thread.currentThread().stop();}
 			
 			
-	    if(CheckEntityCollisions(0f, yMove) )
-	    	go.gameEnded(g);
-	    	Thread.currentThread().stop();
+	    if(CheckEntityCollisions(0f, yMove) ) {
+	    	go.render(g);
+	    	Thread.currentThread().stop();}
 		
 		
 	}

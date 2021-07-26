@@ -120,8 +120,6 @@ while(running) {
 	delta--;
 	tick();
 	render();
-	
-
 
 }
 
