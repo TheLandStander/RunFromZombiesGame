@@ -13,7 +13,6 @@ import launcher.Tiles;
 public class Zombie extends MovingEntity{
 
 	Random rand = new Random();
-    private float time = 0;
     
 	
     
@@ -36,9 +35,9 @@ public class Zombie extends MovingEntity{
 		
 		
 		 int direction = rand.nextInt(4)  ;
-		 time++;
 		 
-		 if(time % 2 == 1) {
+		 
+		 if(handler.getGame().getTime() % 2 == 1) {
 		 if (direction == 0) {   // UP
 		    y -= 50;
 		 }
@@ -46,20 +45,20 @@ public class Zombie extends MovingEntity{
 		 
 		 }
 		 
-		 if(time % 2 == 1) {
+		 if(handler.getGame().getTime() % 2 == 1) {
 		  if (direction == 1) { // DOWN
 		    y += 50;
 		 }
 		 }
 		 
 		 
-		 if(time % 2 == 1) {
+		 if(handler.getGame().getTime() % 2 == 1) {
 		  if (direction == 2) { // left
 			    x -= 50;
 			 }
 		 }
 		 
-		 if(time % 2 == 1) {
+		 if(handler.getGame().getTime() % 2 == 1) {
 		  if (direction == 3) { // right
 			    x += 50;
 			 }

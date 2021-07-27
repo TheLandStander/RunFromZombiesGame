@@ -127,7 +127,7 @@ private Camera camera;
 public void run() {
 init();
 
-int FPS = 20;
+int FPS = 30;
 double timePerTick = 1000000000 /FPS;
 double delta = 0;
 long now;
@@ -178,7 +178,7 @@ if(bs == null) {
 	
 	
 	
-	RoundTimer.drawString(g, "Round: " + (time/167), 80, 10, true, Color.white,new Font("Arial",Font.BOLD,30));
+	RoundTimer.drawString(g, "Round: " + (time/300), 80, 10, true, Color.white,new Font("Arial",Font.BOLD,30));
 	
 	
 	bs.show();

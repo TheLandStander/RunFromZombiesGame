@@ -27,7 +27,6 @@ public class Worlds {
 	private int spawnX, spawnY;
     private Handler handler;
 	private EntityManager entityManager;
-    private int time = 0;
     private Random rand;
     private Window window;
     
@@ -71,8 +70,8 @@ public class Worlds {
 	public void tick() {
 	
 	entityManager.tick();	
-	time++;
-	if(time % 1000 == 167) {
+	
+	if(handler.getGame().getTime() % 1000 == 300) {
 		    entityManager.addEntity(new Zombie(handler, 960, 960));
 		    entityManager.addEntity(new Zombie(handler, 960, 960));
 		    entityManager.addEntity(new Zombie(handler, 960, 960));

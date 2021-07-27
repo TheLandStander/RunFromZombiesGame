@@ -40,7 +40,7 @@ public class GameOverState extends State{
 	public void render(Graphics g) {
 	
       
-		RoundTimer.drawString(g, "YOU SURVIVED  " + (handler.getGame().getTime()/167) + "  ROUNDS" ,600, 300, true, Color.red,new Font("Arial",Font.BOLD,80));
+		RoundTimer.drawString(g, "YOU SURVIVED  " + (handler.getGame().getTime()/300) + "  ROUNDS" ,600, 300, true, Color.ORANGE,new Font("Arial",Font.BOLD,80));
 		
 		
 		
