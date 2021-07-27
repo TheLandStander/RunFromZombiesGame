@@ -1,5 +1,7 @@
 # RunFromZombiesGame
 
-
-This game is stil in development.
 Version 1.0
+
+
+Copyright - All rights reserved to : TheLandStander
+
