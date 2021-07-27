@@ -20,7 +20,7 @@ public class Zombie extends MovingEntity{
 	
 	public Zombie(Handler handler, float x, float y) {
 		super(handler, x, y, 120 ,100);
-		bounds.x = 90;
+		bounds.x = 0;
 	    bounds.y = 64;
 	    bounds.height = 10;
 	    bounds.width = 90;
@@ -67,33 +67,33 @@ public class Zombie extends MovingEntity{
 		 
 		 
 		 
-		 if (x >= 1920) {
+		 if (x >= 1900) {
 			 
-			x -= 900; 
-			 
-			 
-		 }
-		
-		 
-		 if (x <= 0) {
-			 
-			x += 900; 
-			 
-			 
-		 }
-		 
-		 
-		 if (y >= 1920) {
-			 
-			y -= 900; 
+			x -= 50; 
 			 
 			 
 		 }
 		
 		 
-		 if (y <= 0) {
+		 if (x <= 30) {
 			 
-			y += 900; 
+			x += 50; 
+			 
+			 
+		 }
+		 
+		 
+		 if (y >= 1900) {
+			 
+			y -= 50; 
+			 
+			 
+		 }
+		
+		 
+		 if (y <= 30) {
+			 
+			y += 50; 
 			 
 			 
 		 }
