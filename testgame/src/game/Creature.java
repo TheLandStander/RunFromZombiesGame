@@ -139,7 +139,6 @@ public void move() {
 		if(CheckEntityCollisions(xMove, 0f) ) {
 			State.setstate(Gameoverstate);
 			
-			
 		
 		}	
 			
