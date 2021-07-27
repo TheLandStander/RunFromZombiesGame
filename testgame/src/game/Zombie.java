@@ -37,30 +37,30 @@ public class Zombie extends MovingEntity{
 		 int direction = rand.nextInt(4)  ;
 		 
 		 
-		 if(handler.getGame().getTime() % 2 == 1) {
+		 if(handler.getGame().getTime() % 5 ==  1) {
 		 if (direction == 0) {   // UP
-		    y -= 50;
+		    y -= rand.nextInt(150);
 		 }
 		 
 		 
 		 }
 		 
-		 if(handler.getGame().getTime() % 2 == 1) {
+		 if(handler.getGame().getTime() % 5 == 1) {
 		  if (direction == 1) { // DOWN
-		    y += 50;
+		    y += rand.nextInt(150);
 		 }
 		 }
 		 
 		 
-		 if(handler.getGame().getTime() % 2 == 1) {
+		 if(handler.getGame().getTime() % 5 == 1 ) {
 		  if (direction == 2) { // left
-			    x -= 50;
+			    x -= rand.nextInt(150);
 			 }
 		 }
 		 
-		 if(handler.getGame().getTime() % 2 == 1) {
+		 if(handler.getGame().getTime() % 5 == 1) {
 		  if (direction == 3) { // right
-			    x += 50;
+			    x += rand.nextInt(150);
 			 }
 	 }
 		 
@@ -68,7 +68,7 @@ public class Zombie extends MovingEntity{
 		 
 		 if (x >= 1900) {
 			 
-			x -= 50; 
+			x -= rand.nextInt(100);
 			 
 			 
 		 }
@@ -76,7 +76,7 @@ public class Zombie extends MovingEntity{
 		 
 		 if (x <= 30) {
 			 
-			x += 50; 
+			x += rand.nextInt(100);
 			 
 			 
 		 }
@@ -84,7 +84,7 @@ public class Zombie extends MovingEntity{
 		 
 		 if (y >= 1900) {
 			 
-			y -= 50; 
+			y -= rand.nextInt(100);
 			 
 			 
 		 }
@@ -92,7 +92,7 @@ public class Zombie extends MovingEntity{
 		 
 		 if (y <= 30) {
 			 
-			y += 50; 
+			y += rand.nextInt(100);
 			 
 			 
 		 }
