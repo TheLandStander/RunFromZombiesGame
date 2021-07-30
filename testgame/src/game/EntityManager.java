@@ -12,21 +12,32 @@ private Player player;
 private ArrayList<Entity> entities;
 
 
+
 	public EntityManager(Handler handler, Player player){
 		this.player = player;
 		this.handler = handler;
 	   entities = new ArrayList<Entity>();
 	   entities.add(player);
-	   
+	  entities.add(new Human(handler, 600, 600));
+	  entities.add(new Human(handler, 600, 600));
+	  entities.add(new Human2(handler, 600, 600));
+	  entities.add(new Human2(handler, 600, 600));
+	  entities.add(new Human2(handler, 600, 600));
 	  
-	}
+	  
+	  
+	   
+	  }
 	
+
 	public void tick() {
 		
 		for(int i = 0; i < entities.size(); i++) {
 			
 			Entity e = entities.get(i);
 			e.tick();
+			
+			
 			
 		}
 	
@@ -70,6 +81,7 @@ public void setPlayer(Player player) {
 	this.player = player;
 }
 
+
 public ArrayList<Entity> getEntities() {
 	return entities;
 }
@@ -77,6 +89,8 @@ public ArrayList<Entity> getEntities() {
 public void setEntities(ArrayList<Entity> entities) {
 	this.entities = entities;
 }
+
+
 
 
 }

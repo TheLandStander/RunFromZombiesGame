@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 
 import game.Creature;
 import game.Game;
+import game.Human;
 import game.Player;
 import game.Zombie;
 
@@ -12,9 +13,8 @@ public class GameState extends State{
 
     private Worlds Worlds;
     private Handler handler;
-    private Zombie zombie;
-    private int time = 0;
     Window window;
+   
 	
 	public GameState(Handler handler) {
 		super(handler);
@@ -32,15 +32,16 @@ public class GameState extends State{
 	
 	
 	public void tick() {
-		  Worlds.tick();
-		 
 		
+		Worlds.tick();
+		
+	
 		  
 	}
  
 	public void render(Graphics g) {
 	    Worlds.render(g);
-	
+	   
 	
 	}
 

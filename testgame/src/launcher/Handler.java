@@ -6,14 +6,16 @@ import java.awt.image.BufferedImage;
 import game.Camera;
 import game.Creature;
 import game.Entity;
+import game.EntityManager;
 import game.Game;
+import game.Human;
 import game.KeyManager;
+import game.Zombie;
 
 public class Handler {
 
 	private Game game;
 	private Worlds worlds;
-	
 	
 	public Camera getCamera() {
 		
@@ -59,8 +61,6 @@ public class Handler {
 	}
 
 
-
- 
 
 	
 }

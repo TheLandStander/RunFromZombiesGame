@@ -31,6 +31,13 @@ private State gameState;
 private State GameOverState;
 private KeyManager keymanager;
 public int time;
+int x;
+int y;
+
+
+Zombie zomb = new Zombie(handler, x, y);
+Human human = new Human(handler, x, y);
+Human2 human2 = new Human2(handler, x, y);
 
 public boolean isRunning() {
 	return running;
@@ -217,8 +224,6 @@ private void init() {
 	keymanager  = new KeyManager();
 	
 	Window.getFrame().addKeyListener(keymanager);
-	
-	
 	
 	
 }

@@ -18,6 +18,7 @@ public class Creature extends Entity{
 	
 	
 	
+	
 	public float getSpeed() {
 		return speed;
 	}
@@ -136,22 +137,34 @@ public void move() {
 		if(!CheckEntityCollisions(0f, yMove) ) {
 		yMove();}
 		
+		
+		
+		
 		if(CheckEntityCollisions(xMove, 0f) ) {
-			State.setstate(Gameoverstate);
+			
+				State.setstate(Gameoverstate);
+				
+			
+			
+		}
 			
 		
-		}	
-			
 	    if(CheckEntityCollisions(0f, yMove) ) {
-	    	State.setstate(Gameoverstate);
-	    	
+				State.setstate(Gameoverstate);
+				
+				
+			}
+         
+			
+		}
+			
 			
 	    
-	    }
 			
 	    
-	    	
-}
+	    
+	    
+	    
 		
 	
 

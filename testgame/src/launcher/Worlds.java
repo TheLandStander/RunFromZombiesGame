@@ -15,6 +15,8 @@ import javax.swing.JPanel;
 import game.Entity;
 import game.EntityManager;
 import game.Game;
+import game.Human;
+import game.Human2;
 import game.Player;
 import game.Zombie;
 
@@ -27,16 +29,14 @@ public class Worlds {
 	private int spawnX, spawnY;
     private Handler handler;
 	private EntityManager entityManager;
-    private Random rand;
-    private Window window;
-    
+   
+  
  
     
     
 	public Worlds(Handler handler,String path) {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, (int) spawnY, (int)  spawnX));
-		
 		
 		loadWorlds(path);
 		entityManager.getPlayer().setX(spawnX);
@@ -72,13 +72,24 @@ public class Worlds {
 	entityManager.tick();	
 	
 	if(handler.getGame().getTime() % 1000 == 300) {
-		    entityManager.addEntity(new Zombie(handler, 960, 960));
-		    entityManager.addEntity(new Zombie(handler, 960, 960));
-		    entityManager.addEntity(new Zombie(handler, 960, 960));
-		    entityManager.addEntity(new Zombie(handler, 960, 960));
+		   
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		
 		    
 	}	
 		
+	
+	if(handler.getGame().getTime() % 5000 ==4900) {
+		
+	
+		
+	}
+	
+	
+	
 	}
 
 
