@@ -6,7 +6,7 @@ import game.Game;
 
 public abstract class State {
 
-	private static State currentState = null;	
+	protected static State currentState = null;	
 	
 	public abstract void tick();
 	public abstract void render(Graphics g);

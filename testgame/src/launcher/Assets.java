@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 
 	
-public static BufferedImage Player, Zombie ,Human,Human2, Border , Tile,Tile2;	
+public static BufferedImage Player, Zombie ,Human,Human2, Border , Tile, Tile2, End;	
 
 
 public static void init() {
@@ -21,6 +21,8 @@ public static void init() {
 	Border = Window.loadimage("/textures/border.png");
 	Tile2 = Window.loadimage("/textures/tile2.png");
 	Human2 = Window.loadimage("/textures/human2.png");
+	End  = Window.loadimage("/textures/end.png");
+	
 }
 
 

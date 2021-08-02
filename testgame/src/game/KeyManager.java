@@ -10,13 +10,14 @@ public class KeyManager implements KeyListener{
 	keys = new boolean[256];
 	}
 	
-	public boolean up , down , left , right;
+	public boolean up , down , left , right, restart;
 	
 	public void tick() {
 		up = keys[KeyEvent.VK_W];
 		down = keys[KeyEvent.VK_S];
 		left = keys[KeyEvent.VK_A];
 		right = keys[KeyEvent.VK_D];
+		restart = keys[KeyEvent.VK_E];
 	}
 	
 	public void keyTyped(KeyEvent e) {

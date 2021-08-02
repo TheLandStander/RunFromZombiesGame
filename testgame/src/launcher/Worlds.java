@@ -82,13 +82,6 @@ public class Worlds {
 	}	
 		
 	
-	if(handler.getGame().getTime() % 5000 ==4900) {
-		
-	
-		
-	}
-	
-	
 	
 	}
 

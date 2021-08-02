@@ -9,7 +9,7 @@ public class Utils {
 
 public static String loadFileAsString(String path)	{
 	
-	StringBuilder builder = new StringBuilder();
+	StringBuffer builder = new StringBuffer();
 	
 	try{
 		InputStream input = Worlds.class.getResourceAsStream("/worlds/world1.txt");
