@@ -1,9 +1,9 @@
 # RunFromZombiesGame
 
-Version 1.0
+Version 1.0-3.0
 
 
-Copyright - All rights reserved to : TheLandStander
+Click on the lastest version of the game on the right side of the page -> 
 
 
 download the zip and extract the folders, you can run the game through the exe, without java installed.
