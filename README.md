@@ -4,15 +4,23 @@ Version 1.0-4.0
 
 
 CONTROLS:
+
 UP -> W
+
 DOWN -> S
+
 LEFT -> A
+
 RIGHT -> D
 
 SHOOT -> SPACE
+
 SHOOT UP -> SPACE + W
+
 SHOOT DOWN -> SPACE + S
+
 SHOOT LEFT -> SPACE + A
+
 SPANCE RIGHT -> SPACE + D
 
 
