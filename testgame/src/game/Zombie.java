@@ -11,7 +11,7 @@ import launcher.Handler;
 import launcher.Tiles;
 
 public class Zombie extends MovingEntity{
-
+private int counter = 0;
 	
 	
 	Random rand = new Random();
@@ -98,48 +98,23 @@ public class Zombie extends MovingEntity{
 		 }
 			 
 		 
-			if( abs(x - handler.getGame().human.x) <= abs(400) && abs(y - handler.getGame().human.y) <= abs(400)) {
-				
-				
-				 x = 10000; y = 10000;
-				
-					
-					if(x == 10000 || y== 10000 ) {
-						
-						x += 0; y += 0;
-						
-					}
-				 
-				
-				
-				
-			}
-		 
-if( abs(y - handler.getGame().human2.y) <= abs(300) && abs(x - handler.getGame().human2.x) <= abs(900) ) {
+
+
+
+if(CheckEntityCollisions(bounds.x , bounds.y )) {
+	counter ++;
 	
-	 x = 10000; y = 10000;
 	
-		
-		if(x == 10000 || y== 10000 ) {
-			
-			x += 0; y += 0;
-			
-		}
-	 
-				
-			}
-	
-			
+	if(counter == 50) {
+	handler.getWorlds().getEntityManager().getEntities().remove(this);}
+}
+
+
+
 	 }
 	
-	
-
-
-private float abs(float f) {
-	return f;
-		
-		
-	}
+	 
+	 
 
 
 

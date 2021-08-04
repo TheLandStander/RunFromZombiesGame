@@ -18,6 +18,7 @@ import game.Game;
 import game.Human;
 import game.Human2;
 import game.Player;
+import game.Shot;
 import game.Zombie;
 
 
@@ -29,7 +30,7 @@ public class Worlds {
 	private int spawnX, spawnY;
     private Handler handler;
 	private EntityManager entityManager;
-   
+    private int rounds = 1000;
   
  
     
@@ -41,6 +42,16 @@ public class Worlds {
 		loadWorlds(path);
 		entityManager.getPlayer().setX(spawnX);
 		entityManager.getPlayer().setY(spawnY);
+	}
+	
+	private void zombierounds() {
+		
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		
+		
 	}
 	
 	
@@ -71,14 +82,12 @@ public class Worlds {
 	
 	entityManager.tick();	
 	
-	if(handler.getGame().getTime() % 1000 == 300) {
+	if(handler.getGame().getTime() % rounds == 0) {
 		   
-		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
-		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
-		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
-		handler.getWorlds().getEntityManager().addEntity(new Zombie(handler, 960, 960));
+		zombierounds(); 
+		rounds -= 10;
+	
 		
-		    
 	}	
 		
 	

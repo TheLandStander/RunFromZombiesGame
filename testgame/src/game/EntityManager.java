@@ -9,26 +9,42 @@ public class EntityManager {
 
 private Handler handler;
 private Player player;
+
 private ArrayList<Entity> entities;
+
+
+public void shot() {
+	
+}
+
+
+
+
 
 
 
 	public EntityManager(Handler handler, Player player){
 		this.player = player;
 		this.handler = handler;
-	   entities = new ArrayList<Entity>();
-	   entities.add(player);
+	  entities = new ArrayList<Entity>();
+	  entities.add(player);
 	  entities.add(new Human(handler, 600, 600));
 	  entities.add(new Human(handler, 600, 600));
 	  entities.add(new Human2(handler, 600, 600));
 	  entities.add(new Human2(handler, 600, 600));
 	  entities.add(new Human2(handler, 600, 600));
+	
+	
 	  
-	  
-	  
-	   
 	  }
 	
+
+	
+
+
+
+
+
 
 	public void tick() {
 		
@@ -41,9 +57,11 @@ private ArrayList<Entity> entities;
 			
 		}
 	
-
 		
+		
+	
 	}
+	
 
 public void render(Graphics g) {
 	

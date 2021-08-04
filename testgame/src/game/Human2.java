@@ -8,7 +8,7 @@ import launcher.Handler;
 
 public class Human2 extends MovingEntity{
 Random rand = new Random();
-
+private int counter = 0;
 
     
 	
@@ -55,6 +55,7 @@ int direction = rand.nextInt(4)  ;
 		  if (direction == 3) { // right
 			    x += 70;
 			 }
+		    
 	 }
 		 
 		 
@@ -89,33 +90,24 @@ int direction = rand.nextInt(4)  ;
 			 
 		 }
 			 
-			 if( abs(x - handler.getGame().zomb.x) <= abs(300) && abs(y - handler.getGame().zomb.y) <= abs(300)) {
+		 if(CheckEntityCollisions(bounds.x, bounds.y)) {
+				counter ++;
+					 
+					       if(counter == 25) {
+							handler.getWorlds().getEntityManager().getEntities().remove(this); }
+					 
+					 
+					
 				
-				 x = 10000; y = 10000;
-
-					if(x == 10000 || y== 10000 ) {
-						
-						x += 0; y += 0;
-						
-					}
-				 
-			
-		 }
+				 }
+		 
+		 
+		 handler.getWorlds().getEntityManager().addEntity(new Shot(handler, this.x, this.y));
 		 
 		
 	 }
 	
 	
-
-
-
-
-
-
-private float abs(float f) {
-		// TODO Auto-generated method stub
-		return f;
-	}
 
 
 

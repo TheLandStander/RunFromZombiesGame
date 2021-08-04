@@ -15,7 +15,10 @@ public class Creature extends Entity{
 	GameOverState Gameoverstate = new GameOverState(handler);
 	
 	private int time = 0;
-	
+	private int counter = 0;
+	Shot shot = new Shot (handler, x, y);
+	Human human = new Human(handler, x, y);
+	Human2 human2 = new Human2(handler, x, y);
 	
 	
 	
@@ -140,36 +143,49 @@ public void move() {
 		
 		
 		
-		if(CheckEntityCollisions(xMove, 0f) ) {
-			
-				
-			State.setstate(Gameoverstate);
-				
-				
-			
-			
-		}
-			
+if(CheckEntityCollisions(xMove, 0f) ) {
+    
+	counter++;
+	
+	if(counter == 50) {
 		
-	    if(CheckEntityCollisions(0f, yMove) ) {
-				State.setstate(Gameoverstate);
+		State.setstate(Gameoverstate);
+	}
+	 
+	 
+}
+            
+        
+   
+
+if(CheckEntityCollisions(0f, yMove) ) {
+       counter++;         
+      
+if(counter == 50) {
+		
+		State.setstate(Gameoverstate);
+	}
+
+}
+        
+ 
+		}
 				
-				
-			}
+			
          
 			
-		}
 			
-			
-	    
-			
-	    
-	    
+	      
 	    
 	    
 		
 	
 
+
+private float abs(int i) {
+	
+	return i;
+}
 
 public void tick() {
 

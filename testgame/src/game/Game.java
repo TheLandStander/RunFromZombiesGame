@@ -34,7 +34,7 @@ public int time;
 int x;
 int y;
 
-
+Shot shot = new Shot(handler,x,y);
 Zombie zomb = new Zombie(handler, x, y);
 Human human = new Human(handler, x, y);
 Human2 human2 = new Human2(handler, x, y);
